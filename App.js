@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 /* Nested Structure in React
 <div id="parent">
     <div id="child">
