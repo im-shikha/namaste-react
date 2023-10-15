@@ -7,41 +7,9 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <h1>I am above the root!</h1>
     <div id="root">
-      <!-- <h1>
-        Hi! I will load before JS, and sadly I will be replaced by React code.
-      </h1> -->
+      <h1>Not Rendered!⚠️</h1>
     </div>
-    <h1>I am below the root!</h1>
-
-    <!-- 1: Hello World Program using HTML -->
-
-    <!-- <h1>Hello World!</h1> -->
-
-    <!-- 2: Hello World Program using JavaScript -->
-
-    <!-- <script>
-      const heading = document.createElement("h1");
-      heading.innerHTML = "Hello World from JS!";
-
-      const root = document.getElementById("root");
-      root.appendChild(heading);
-    </script> -->
-
-    <!-- 3: Hello World Program using React -->
-
-    <!-- <script>
-      const heading = React.createElement(
-        "h1",
-        { id: "heading" },
-        "Hello World from React!"
-      );
-
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-
-      root.render(heading);
-    </script> -->
 
     <script type="module" src="./App.js"></script>
   </body>
