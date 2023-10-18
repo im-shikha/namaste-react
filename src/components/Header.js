@@ -1,4 +1,4 @@
-import logo from "../../cravings-cuisine-logo.png";
+import logo from "../image_assets/cravings-cuisine-logo.png";
 
 const Header = () => {
   return (

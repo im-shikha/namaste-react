@@ -1,3 +1,5 @@
+import { CDN_IMAGE_URL } from "../utils/constants";
+
 const CardComponent = (props) => {
   const { resData } = props;
 
@@ -14,10 +16,7 @@ const CardComponent = (props) => {
       <img
         className="card-image"
         alt="item-image"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
+        src={CDN_IMAGE_URL + cloudinaryImageId}
       />
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
