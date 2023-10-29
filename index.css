@@ -85,6 +85,7 @@ h5 {
   margin: 5px;
   padding: 5px;
   width: 222.5px;
+  height: 480px;
   border-radius: 10px;
   box-shadow: 0 4px 6px -2px #fc8019;
 }
@@ -124,4 +125,24 @@ h5 {
   height: 50%;
   border-radius: 10px;
   background-color: #e0dede;
+}
+
+/* ERROR PAGE */
+.error {
+  align-items: center;
+}
+
+.error-img {
+  display: block;
+  width: 30%;
+  margin: auto;
+}
+
+.error-text {
+  text-align: center;
+  margin: auto 0px;
+}
+
+.error-text > h1 {
+  color: red;
 }
