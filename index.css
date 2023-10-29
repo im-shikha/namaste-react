@@ -3,10 +3,12 @@ h5 {
   color: gray;
   font-family: sans-serif;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
+  box-shadow: 0 4px 6px -2px #fc8019;
 }
 
 .logo-container {
@@ -14,14 +16,21 @@ h5 {
 }
 
 .logo-container > h2 {
-  font-size: 20px;
+  font-size: 30px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #fc8019;
+  margin-top: 15px;
 }
 
 .logo {
-  width: 40px;
+  width: 60px;
+  height: 60px;
   margin: 10px 20px;
+}
+
+.cart-img {
+  width: 40px;
+  height: 40px;
 }
 
 .nav-items > ul {
@@ -34,7 +43,18 @@ h5 {
   margin: 0px 20px;
 }
 
-/* BODY */
+.login {
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-box {
+  width: 300px;
+}
+
+/* BODYCOMPONENT */
 
 .body-container {
   width: 100%;
@@ -46,17 +66,33 @@ h5 {
   flex-wrap: wrap;
 }
 
+.search {
+  margin: 10px;
+}
+
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+}
+
+/* CARDCOMPONENT */
+
 .card-container {
   margin: 5px;
   padding: 5px;
   width: 222.5px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 6px -2px #fc8019;
 }
 
 .card-container:hover {
   cursor: pointer;
   background-color: aliceblue;
+  box-shadow: 0 6px 8px -2px #fc8019;
 }
 
 .card-image {
@@ -65,7 +101,27 @@ h5 {
   border-radius: 10px;
 }
 
-.filter-btn {
-  margin: 10px;
-  cursor: pointer;
+/* SHIMMER */
+
+.shimmer-container {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  margin: 5px;
+  padding: 5px;
+  width: 222.5px;
+  height: 485px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 6px -2px #fc8019;
+}
+
+.shimmer-image {
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+  background-color: #e0dede;
 }

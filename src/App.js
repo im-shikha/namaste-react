@@ -17,6 +17,7 @@ const App = () => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
+//StrictMode leads to
 root.render(
   <StrictMode>
     <App />
