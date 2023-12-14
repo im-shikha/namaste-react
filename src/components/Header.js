@@ -1,6 +1,7 @@
 import logo from "../image_assets/cravings-cuisine-logo.png";
 import cart from "../image_assets/shopping-cart.png";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [btnLogin, setBtnLogin] = useState("Login");
@@ -21,9 +22,24 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
+          <li>
+            <Link className="link" to="/">
+              Home
+            </Link>
+          </li>
+
+          <li>
+            <Link className="link" to="/about">
+              About
+            </Link>
+          </li>
+
+          <li>
+            <Link className="link" to="/contact-us">
+              Contact Us
+            </Link>
+          </li>
+
           <li>Support</li>
           <li>
             <img className="cart-img" alt="food-cart" src={cart}></img>
