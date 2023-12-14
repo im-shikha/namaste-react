@@ -4,10 +4,18 @@ h5 {
   font-family: sans-serif;
 }
 
+body {
+  margin-top: 100px;
+}
+
 .header {
+  top: 0;
+  width: 100%;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
+  background-color: white;
   box-shadow: 0 4px 6px -2px #fc8019;
 }
 
@@ -33,6 +41,11 @@ h5 {
   height: 40px;
 }
 
+.cart-img:hover {
+  z-index: 10;
+  transform: scale(1.1) rotate(0.001deg);
+}
+
 .nav-items > ul {
   display: flex;
 }
@@ -41,6 +54,15 @@ h5 {
   list-style: none;
   font-size: 24px;
   margin: 0px 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 .login {
@@ -58,7 +80,7 @@ h5 {
 
 .body-container {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 100px;
 }
 
 .res-container {
@@ -84,7 +106,7 @@ h5 {
 .card-container {
   margin: 5px;
   padding: 5px;
-  width: 222.5px;
+  width: 220px;
   height: 480px;
   border-radius: 10px;
   box-shadow: 0 4px 6px -2px #fc8019;
@@ -113,7 +135,7 @@ h5 {
 .shimmer-card {
   margin: 5px;
   padding: 5px;
-  width: 222.5px;
+  width: 220px;
   height: 485px;
   border-radius: 10px;
   background-color: #f0f0f0;
@@ -145,4 +167,9 @@ h5 {
 
 .error-text > h1 {
   color: red;
+}
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
 }

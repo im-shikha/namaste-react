@@ -29,3 +29,8 @@
 - Named Export/Import
 - export const Component
 - import {Component} from "path";
+
+# Two types of Routing in Web apps
+
+- Client Side Routing
+- Server Side Routing
