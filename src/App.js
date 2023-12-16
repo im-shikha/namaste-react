@@ -1,4 +1,4 @@
-import React, { StrictMode } from "react";
+import React, { StrictMode, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -12,6 +12,17 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import "../index.css";
 import About from "./components/About";
 import ContactUs from "./components/ContactUs";
+//import Grocery from "./components/Grocery";
+
+/* Chunking
+Code Splitting
+Dynamic Bundling
+Lazy Loading
+On-Demand Loading
+Dynamic Import
+*/
+
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const App = () => {
   return (
@@ -39,6 +50,14 @@ const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs />,
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurants/:resId",

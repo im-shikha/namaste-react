@@ -2,10 +2,12 @@ import logo from "../image_assets/cravings-cuisine-logo.png";
 import cart from "../image_assets/shopping-cart.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [btnLogin, setBtnLogin] = useState("Login");
 
+  const onlineStatus = useOnlineStatus();
   //if dependency array is absent, useEffect hook is called every time Header component renders/re-renders.
   //if dependency array is empty => [], useEffect is called only on the initial render.
   //if we put some dependency inside dependency array, useEffect will be called only when the dependency changes.
@@ -22,6 +24,7 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
+          <li>{onlineStatus ? "🟢" : "🔴"}</li>
           <li>
             <Link className="link" to="/">
               Home
@@ -37,6 +40,12 @@ const Header = () => {
           <li>
             <Link className="link" to="/contact-us">
               Contact Us
+            </Link>
+          </li>
+
+          <li>
+            <Link className="link" to="/grocery">
+              Grocery
             </Link>
           </li>
 
