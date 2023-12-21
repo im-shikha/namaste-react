@@ -38,12 +38,12 @@ const BodyComponent = () => {
   return resList.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body-container">
-      <div className="filter">
-        <div className="search">
+    <div className="w-full mt-28">
+      <div className="flex">
+        <div className="m-3">
           <input
             type="text"
-            className="search-box"
+            className="w-80 py-2 px-4 border-gray-400 rounded shadow"
             placeholder="Search for restaurants, food and cuisines..."
             value={searchText}
             onChange={(e) => {
@@ -51,6 +51,7 @@ const BodyComponent = () => {
             }}
           ></input>
           <button
+            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
             onClick={() => {
               console.log(searchText);
               const filterList = resList.filter(
@@ -70,7 +71,7 @@ const BodyComponent = () => {
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="m-3 cursor-pointer bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
           onClick={() => {
             const filterList = filteredList.filter(
               (res) => res.info.avgRating > 4.2
@@ -81,7 +82,7 @@ const BodyComponent = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredList.map((res) => (
           <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
             <CardComponent resData={res} />

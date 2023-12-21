@@ -1,4 +1,8 @@
-/* HEADER */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HEADER
 h5 {
   color: gray;
   font-family: sans-serif;
@@ -76,8 +80,6 @@ body {
   width: 300px;
 }
 
-/* BODYCOMPONENT */
-
 .body-container {
   width: 100%;
   margin-top: 100px;
@@ -101,8 +103,6 @@ body {
   display: flex;
 }
 
-/* CARDCOMPONENT */
-
 .card-container {
   margin: 5px;
   padding: 5px;
@@ -124,7 +124,6 @@ body {
   border-radius: 10px;
 }
 
-/* SHIMMER */
 
 .shimmer-container {
   margin-top: 80px;
@@ -149,7 +148,6 @@ body {
   background-color: #e0dede;
 }
 
-/* ERROR PAGE */
 .error {
   align-items: center;
 }
@@ -172,4 +170,4 @@ body {
 .user-card {
   padding: 10px;
   border: 1px solid black;
-}
+} */
