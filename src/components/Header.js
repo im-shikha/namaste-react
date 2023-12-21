@@ -17,7 +17,7 @@ const Header = () => {
   }, [btnLogin]);
 
   return (
-    <div className="top-0 sm:w-full h-20 sm:h-24 fixed flex justify-between bg-white rounded-md shadow-xl sm:bg-pink-100">
+    <div className="top-0 sm:w-full h-20 sm:h-24 fixed flex justify-between bg-white rounded-md shadow-xl">
       <div className="flex">
         <img
           className="mt-6 sm:mt-4 p-2 h-9 w-9 my-1 mx-2 sm:h-16 sm:w-16 sm:my-3 sm:mx-8"

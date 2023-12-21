@@ -36,4 +36,19 @@ const CardComponent = (props) => {
   );
 };
 
+// Higher Order Component
+
+export const withPromotedLabel = (CardComponent) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white p-2 rounded">
+          Promoted
+        </label>
+        <CardComponent {...props} />
+      </div>
+    );
+  };
+};
+
 export default CardComponent;

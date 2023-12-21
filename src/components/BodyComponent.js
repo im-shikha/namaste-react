@@ -1,14 +1,17 @@
-import CardComponent from "./CardComponent";
+import CardComponent, { withPromotedLabel } from "./CardComponent";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import useOnlineStatus from "./../utils/useOnlineStatus";
 
 const BodyComponent = () => {
   const [resList, setResList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
-
   const [searchText, setSearchText] = useState("");
+
+  const PromotedCardComponent = withPromotedLabel(CardComponent);
+
+  console.log(resList);
 
   useEffect(() => {
     fetchData();
@@ -85,7 +88,11 @@ const BodyComponent = () => {
       <div className="flex flex-wrap">
         {filteredList.map((res) => (
           <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
-            <CardComponent resData={res} />
+            {res.info.avgRating > 4.2 ? (
+              <PromotedCardComponent resData={res} />
+            ) : (
+              <CardComponent resData={res} />
+            )}
           </Link>
         ))}
       </div>
