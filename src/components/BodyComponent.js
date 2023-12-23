@@ -1,8 +1,9 @@
 import CardComponent, { withPromotedLabel } from "./CardComponent";
 import Shimmer from "./Shimmer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, redirect } from "react-router-dom";
 import useOnlineStatus from "./../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const BodyComponent = () => {
   const [resList, setResList] = useState([]);
@@ -10,6 +11,8 @@ const BodyComponent = () => {
   const [searchText, setSearchText] = useState("");
 
   const PromotedCardComponent = withPromotedLabel(CardComponent);
+
+  const { loggedInUser, setUsername } = useContext(UserContext);
 
   console.log(resList);
 
@@ -46,7 +49,7 @@ const BodyComponent = () => {
         <div className="m-3">
           <input
             type="text"
-            className="w-80 py-2 px-4 border-gray-400 rounded shadow"
+            className="w-[330px] py-2 px-4 border-gray-400 rounded shadow"
             placeholder="Search for restaurants, food and cuisines..."
             value={searchText}
             onChange={(e) => {
@@ -84,6 +87,17 @@ const BodyComponent = () => {
         >
           Top Rated Restaurants
         </button>
+        <div className=" flex flex-wrap items-center">
+          <label>UserName: </label>
+          <input
+            className="w-40 py-2 px-4 mx-2 border-gray-400 rounded shadow"
+            placeholder="Type your name"
+            value={loggedInUser}
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+        </div>
       </div>
       <div className="flex flex-wrap">
         {filteredList.map((res) => (

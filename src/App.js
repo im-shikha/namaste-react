@@ -1,4 +1,4 @@
-import React, { StrictMode, lazy, Suspense } from "react";
+import React, { StrictMode, lazy, Suspense, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -12,6 +12,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import "../index.css";
 import About from "./components/About";
 import ContactUs from "./components/ContactUs";
+import UserContext from "./utils/UserContext";
 //import Grocery from "./components/Grocery";
 
 /* Chunking
@@ -25,11 +26,22 @@ Dynamic Import
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const App = () => {
+  const [username, setUsername] = useState();
+
+  useEffect(() => {
+    const data = {
+      name: "Shikha",
+    };
+    setUsername(data.name);
+  }, []);
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ loggedInUser: username, setUsername }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 

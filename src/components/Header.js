@@ -1,13 +1,17 @@
 import logo from "../image_assets/cravings-cuisine-logo.png";
 import cart from "../image_assets/shopping-cart.png";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnLogin, setBtnLogin] = useState("Login");
 
   const onlineStatus = useOnlineStatus();
+
+  const { loggedInUser } = useContext(UserContext);
+  console.log(loggedInUser);
   //if dependency array is absent, useEffect hook is called every time Header component renders/re-renders.
   //if dependency array is empty => [], useEffect is called only on the initial render.
   //if we put some dependency inside dependency array, useEffect will be called only when the dependency changes.
