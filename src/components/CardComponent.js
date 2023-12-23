@@ -27,7 +27,7 @@ const CardComponent = (props) => {
         </h5>
         <h5>⭐ {avgRating}</h5>
         <div className="pt-4 pb-2">
-          <span class="inline-block bg-orange-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          <span className="inline-block bg-orange-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
             {costForTwo}
           </span>
         </div>
