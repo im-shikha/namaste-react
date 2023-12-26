@@ -12,7 +12,10 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import "../index.css";
 import About from "./components/About";
 import ContactUs from "./components/ContactUs";
+import Cart from "./components/Cart";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 //import Grocery from "./components/Grocery";
 
 /* Chunking
@@ -36,12 +39,14 @@ const App = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ loggedInUser: username, setUsername }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: username, setUsername }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -74,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "/restaurants/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

@@ -1,8 +1,16 @@
 import React from "react";
 import { CDN_ITEM_IMAGE_URL } from "../utils/constants";
 import noimage from "../image_assets/noimage.png";
+import { useDispatch } from "react-redux";
+import { addItems } from "../utils/slice/cartSlice";
 
 const ItemsList = ({ items }) => {
+  const dispatch = useDispatch();
+  const handleAddItem = (item) => {
+    //Dispatch an action
+    dispatch(addItems(item));
+  };
+
   return (
     <div>
       {items.map((item) => (
@@ -22,7 +30,10 @@ const ItemsList = ({ items }) => {
             <p className="text-xs max-w-sm">{item.card.info.description}</p>
           </div>
           <div className="w-3/12 p-4">
-            <button className="mt-20 mx-10 p-2 bg-white font-bold text-green-500 shadow-lg absolute rounded text-xs">
+            <button
+              className="mt-20 mx-10 p-2 bg-white font-bold text-green-500 shadow-lg absolute rounded text-xs"
+              onClick={() => handleAddItem(item)}
+            >
               Add +
             </button>
             <img

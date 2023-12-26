@@ -4,6 +4,7 @@ import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnLogin, setBtnLogin] = useState("Login");
@@ -11,7 +12,10 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   const { loggedInUser } = useContext(UserContext);
-  console.log(loggedInUser);
+
+  //Subscribing to a store using selector.
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   //if dependency array is absent, useEffect hook is called every time Header component renders/re-renders.
   //if dependency array is empty => [], useEffect is called only on the initial render.
   //if we put some dependency inside dependency array, useEffect will be called only when the dependency changes.
@@ -64,12 +68,18 @@ const Header = () => {
           <li className="list-none text-xs sm:text-2xl mx-1 my-2 sm:my-0 sm:mx-5">
             Support
           </li>
+
           <li className="list-none text-xs sm:text-2xl mx-1 my-2 sm:my-0 sm:mx-5">
-            <img
-              className="w-5 h-5 sm:w-10 sm:h-10 hover:z-10 hover:transform hover:rotate-6 hover:scale-110"
-              alt="food-cart"
-              src={cart}
-            ></img>
+            <Link to="/cart" className=" relative">
+              <img
+                className="w-5 h-5 sm:w-10 sm:h-10 hover:z-10 hover:transform hover:rotate-6 hover:scale-110"
+                alt="food-cart"
+                src={cart}
+              ></img>
+              <div className=" text-lg absolute bottom-7 left-10 bg-orange-300 rounded-full w-8 h-8 text-center">
+                {cartItems.length}
+              </div>
+            </Link>
           </li>
 
           <li className="list-none text-xs sm:text-2xl mx-1 my-2 sm:my-0 sm:mx-5">
