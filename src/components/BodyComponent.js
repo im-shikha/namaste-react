@@ -77,7 +77,7 @@ const BodyComponent = () => {
           </button>
         </div>
         <button
-          className="m-3 cursor-pointer bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+          className="m-3 cursor-pointer bg-black text-white font-semibold py-2 px-4 border rounded shadow"
           onClick={() => {
             const filterList = filteredList.filter(
               (res) => res.info.avgRating > 4.2

@@ -28,19 +28,16 @@ const Header = () => {
     <div className="top-0 sm:w-full h-20 sm:h-24 fixed flex justify-between bg-white rounded-md shadow-xl">
       <div className="flex">
         <img
-          className="mt-6 sm:mt-4 p-2 h-9 w-9 my-1 mx-2 sm:h-16 sm:w-16 sm:my-3 sm:mx-8"
+          className="mt-6 sm:mt-4 p-2 h-9 w-9 my-1 mx-1 sm:h-16 sm:w-16 sm:my-3 sm:mx-2 hover:scale-110"
           alt="logo"
           src={logo}
         />
-        <h2 className="sm:mt-4 text-xs sm:text-2xl font-serif text-orange-500 mt-6">
+        <h2 className="sm:mt-8 text-xs sm:text-2xl text-orange-500 font-mono mt-6 font-bold">
           Cravings Cuisine
         </h2>
       </div>
       <div className="">
         <ul className="flex p-1 mx-5 my-4 sm:p-4 sm:m-4">
-          <li className="list-none text-xs sm:text-2xl mx-1 my-2 sm:my-0 sm:mx-5">
-            {onlineStatus ? "🟢" : "🔴"}
-          </li>
           <li className="list-none text-xs sm:text-2xl mx-1 my-2 sm:my-0 sm:mx-5">
             <Link className="text-black hover:underline" to="/">
               Home
@@ -53,7 +50,7 @@ const Header = () => {
             </Link>
           </li>
 
-          <li className="list-none text-xs sm:text-2xl mx-1 my-2 sm:my-0 sm:mx-5">
+          {/* <li className="list-none text-xs sm:text-2xl mx-1 my-2 sm:my-0 sm:mx-5">
             <Link className="hover:underline" to="/contact-us">
               Contact
             </Link>
@@ -63,7 +60,7 @@ const Header = () => {
             <Link className="hover:underline" to="/grocery">
               Grocery
             </Link>
-          </li>
+          </li> */}
 
           <li className="list-none text-xs sm:text-2xl mx-1 my-2 sm:my-0 sm:mx-5">
             Support
@@ -76,7 +73,7 @@ const Header = () => {
                 alt="food-cart"
                 src={cart}
               ></img>
-              <div className=" text-lg absolute bottom-7 left-10 bg-orange-300 rounded-full w-8 h-8 text-center">
+              <div className=" font-bold text-base absolute bottom-7 left-8 bg-orange-300 rounded-full w-6 h-6 text-center">
                 {cartItems.length}
               </div>
             </Link>
@@ -93,6 +90,9 @@ const Header = () => {
             >
               {btnLogin}
             </button>
+          </li>
+          <li className="list-none text-xs sm:text-2xl mx-1 my-2 sm:my-0 sm:mx-5">
+            {onlineStatus ? "🟢" : "🔴"}
           </li>
         </ul>
       </div>
