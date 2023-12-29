@@ -14,8 +14,6 @@ const BodyComponent = () => {
 
   const { loggedInUser, setUsername } = useContext(UserContext);
 
-  console.log(resList);
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -26,9 +24,11 @@ const BodyComponent = () => {
     );
 
     const json = await data.json();
+    console.log(json);
     const newResList =
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
+    console.log(newResList);
     setResList(newResList);
     setFilteredList(newResList);
   };
